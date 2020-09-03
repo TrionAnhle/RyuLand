@@ -37,7 +37,7 @@
 				<div class="container">
 					<form:form class="form-horizontal" role="form" id="formSubmit" modelAttribute="model">
 						<div class="row">
-							
+							<ckfinder:ckfinder basePath="/ckfinder/" />
 						</div>
 					</form:form>					
 				</div>
