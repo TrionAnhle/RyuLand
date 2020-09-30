@@ -4,8 +4,9 @@
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
-<meta charset="utf-8">
-<title>Trang chủ</title>
+	<meta charset="utf-8">
+	<title>Trang chủ</title>
+	
 </head>
 <body>
 	<div class="breadcrumbs">
@@ -35,11 +36,7 @@
 			</div>
 			<div class="card-body card-block">
 				<div class="container">
-					<form:form class="form-horizontal" role="form" id="formSubmit" modelAttribute="model">
-						<div class="row">
-							<ckfinder:ckfinder basePath="/ckfinder/" />
-						</div>
-					</form:form>					
+					
 				</div>
 			</div>
 		</div>

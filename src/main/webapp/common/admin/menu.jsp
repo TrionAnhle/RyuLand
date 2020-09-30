@@ -9,7 +9,7 @@
                     <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand" href="./"><img src="<c:url value='/template/admin/images/logo.png'/> " alt="Logo"></a>
-                <a class="navbar-brand hidden" href="./"><img src="images/logo2.png" alt="Logo"></a>
+                <a class="navbar-brand hidden" href="./"><img src="<c:url value='/template/admin/images/logo2.png'/> " alt="Logo"></a>
             </div>
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">
@@ -23,6 +23,7 @@
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-list"></i><a href="<c:url value='/quan-tri/san-pham/danh-sach'/>">Danh sách</a></li>
                             <li><i class="fa fa-truck"></i><a href="ui-badges.html">Nhập hàng</a></li>
+                            <li><i class="fa fa-sitemap"></i><a href=" <c:url value="/quan-tri/the-loai"/> ">Thể loại</a></li>
                         </ul>
                     </li>
                     <li class="active">

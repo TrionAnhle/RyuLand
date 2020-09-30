@@ -78,7 +78,4 @@ public abstract class BaseEntity {
 	public void setModifiedBy(String modifiedBy) {
 		this.modifiedBy = modifiedBy;
 	}
-	
-	
-
 }

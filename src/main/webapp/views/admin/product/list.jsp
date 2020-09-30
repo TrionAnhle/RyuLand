@@ -12,7 +12,7 @@
 		<div class="col-sm-4">
 			<div class="page-header float-left">
 				<div class="page-title">
-					<h1>Hàng Hóa</h1>
+					<h1>Sản phẩm</h1>
 				</div>
 			</div>
 		</div>
@@ -20,7 +20,7 @@
 			<div class="page-header float-right">
 				<div class="page-title">
 					<ol class="breadcrumb text-right">
-						<li class="active">Hàng hóa</li>
+						<li class="active">Sản phẩm</li>
 						<li class="active">Danh sách</li>
 					</ol>
 				</div>
@@ -28,6 +28,7 @@
 		</div>
 	</div>
 	<div class="content mt-3">
+		<div class="container">
 		<h2>Danh sách các sản phẩm</h2>
 
 		<div class="widget-box table-filter">
@@ -68,18 +69,20 @@
 						<td>15 000</td>
 						<td>10%</td>
 						<td>15</td>
-						<td><a class="btn btn-sm btn-primary btn-edit"
+						<td>
+							<a class="btn btn-sm btn-primary btn-edit"
 							data-toggle="tooltip" title="Cập nhật sản phẩm"
 							href='${updateNewURL}'><i class="fa fa-pencil-square-o"
-								aria-hidden="true"></i> </a> <a
-							class="btn btn-sm btn-danger btn-delete" data-toggle="tooltip"
+								aria-hidden="true"></i> </a> 
+							<a class="btn btn-sm btn-danger btn-delete" data-toggle="tooltip"
 							title="Xóa sản phẩm" href='${updateNewURL}'><i
-								class="fa fa-times" aria-hidden="true"></i> </a></td>
+								class="fa fa-times" aria-hidden="true"></i> </a>
+						</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
-
+		</div>
 	</div>
 	<!-- .content -->
 </body>

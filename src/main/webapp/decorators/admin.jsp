@@ -1,4 +1,4 @@
-<%@include file="/common/taglib.jsp"%>
+	<%@include file="/common/taglib.jsp"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!doctype html>
 <html class="no-js" lang="en">
@@ -11,19 +11,25 @@
 
     <link rel="apple-touch-icon" href="<c:url value='/template/admin/apple-icon.png'/> ">
     <link rel="shortcut icon" href=" <c:url value='/template/admin/favicon.ico'/> ">
-
+	
+	
     <link rel="stylesheet" href=" <c:url value='/template/admin/vendors/bootstrap/dist/css/bootstrap.min.css'/> ">
     <link rel="stylesheet" href=" <c:url value='/template/admin/vendors/font-awesome/css/font-awesome.min.css'/> ">
     <link rel="stylesheet" href=" <c:url value='/template/admin/vendors/themify-icons/css/themify-icons.css'/> ">
     <link rel="stylesheet" href=" <c:url value='/template/admin/vendors/flag-icon-css/css/flag-icon.min.css'/> ">
     <link rel="stylesheet" href=" <c:url value='/template/admin/vendors/selectFX/css/cs-skin-elastic.css'/> ">
     <link rel="stylesheet" href=" <c:url value='/template/admin/vendors/jqvmap/dist/jqvmap.min.css'/> ">
-
-
     <link rel="stylesheet" href="<c:url value='/template/admin/assets/css/style.css'/> ">
-
+    <link rel="stylesheet" href="<c:url value='/template/admin/tablestyle.css'/> ">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
-z
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="<c:url value='/ckeditor/ckeditor.js' />"></script>
+	<script src="<c:url value='/ckfinder/ckfinder.js' />"></script>
+	
+    
+	
 </head>
 <body>
 	<%@include file='/common/admin/menu.jsp' %>
@@ -33,18 +39,10 @@ z
 	</div>	
 	
 	
-	<script src=" <c:url value='/template/admin/vendors/jquery/dist/jquery.min.js'/> "></script>
+	
     <script src=" <c:url value='/template/admin/vendors/popper.js/dist/umd/popper.min.js'/> "></script>
     <script src=" <c:url value='/template/admin/vendors/bootstrap/dist/js/bootstrap.min.js'/> "></script>
     <script src=" <c:url value='/template/admin/assets/js/main.js'/> "></script>
-
-
-    <script src=" <c:url value='/template/admin/vendors/chart.js/dist/Chart.bundle.min.js'/> "></script>
-    <script src=" <c:url value='/template/admin/assets/js/dashboard.js'/> "></script>
-    <script src=" <c:url value='/template/admin/assets/js/widgets.js'/> "></script>
-    <script src=" <c:url value='/template/admin/vendors/jqvmap/dist/jquery.vmap.min.js'/> "></script>
-    <script src=" <c:url value='/template/admin/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js'/> "></script>
-    <script src=" <c:url value='/template/admin/vendors/jqvmap/dist/maps/jquery.vmap.world.js'/> "></script>
     <script>
         (function($) {
             "use strict";
@@ -65,3 +63,4 @@ z
     </script>
 </body>
 </html>
+	

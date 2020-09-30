@@ -230,7 +230,7 @@
             </div>
             <!--/.col-->
 
-            <div class="col-xl-6">
+            <div class="col-xl-7">
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
@@ -307,63 +307,14 @@
                 </div>
             </div>
 
-            <div class="col-xl-3 col-lg-6">
-                <section class="card">
-                    <div class="twt-feed blue-bg">
-                        <div class="corner-ribon black-ribon">
-                            <i class="fa fa-twitter"></i>
-                        </div>
-                        <div class="fa fa-twitter wtt-mark"></div>
-
-                        <div class="media">
-                            <a href="#">
-                                <img class="align-self-center rounded-circle mr-3" style="width:85px; height:85px;" alt="" src="images/admin.jpg">
-                            </a>
-                            <div class="media-body">
-                                <h2 class="text-white display-6">Jim Doe</h2>
-                                <p class="text-light">Project Manager</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="weather-category twt-category">
-                        <ul>
-                            <li class="active">
-                                <h5>750</h5>
-                                Tweets
-                            </li>
-                            <li>
-                                <h5>865</h5>
-                                Following
-                            </li>
-                            <li>
-                                <h5>3645</h5>
-                                Followers
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="twt-write col-sm-12">
-                        <textarea placeholder="Write your Tweet and Enter" rows="1" class="form-control t-text-area"></textarea>
-                    </div>
-                    <footer class="twt-footer">
-                        <a href="#"><i class="fa fa-camera"></i></a>
-                        <a href="#"><i class="fa fa-map-marker"></i></a>
-                        New Castle, UK
-                        <span class="pull-right">
-                            32
-                        </span>
-                    </footer>
-                </section>
-            </div>
-
-
-            <div class="col-xl-3 col-lg-6">
+            <div class="col-xl-5 col-lg-6">
                 <div class="card">
                     <div class="card-body">
                         <div class="stat-widget-one">
                             <div class="stat-icon dib"><i class="ti-money text-success border-success"></i></div>
                             <div class="stat-content dib">
                                 <div class="stat-text">Total Profit</div>
-                                <div class="stat-digit">1,012</div>
+                                <div class="stat-digit">1,100,012,100 VNĐ</div>
                             </div>
                         </div>
                     </div>
@@ -371,7 +322,7 @@
             </div>
 
 
-            <div class="col-xl-3 col-lg-6">
+            <div class="col-xl-5 col-lg-6">
                 <div class="card">
                     <div class="card-body">
                         <div class="stat-widget-one">
@@ -385,7 +336,7 @@
                 </div>
             </div>
 
-            <div class="col-xl-3 col-lg-6">
+            <div class="col-xl-5 col-lg-6">
                 <div class="card">
                     <div class="card-body">
                         <div class="stat-widget-one">
