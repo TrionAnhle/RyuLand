@@ -1,368 +1,262 @@
 <%@include file="/common/taglib.jsp"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="com.ryuland.util.SecurityUtils" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
     <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Trang chủ</title>
 </head>
 <body>
-<div class="breadcrumbs">
-            <div class="col-sm-4">
-                <div class="page-header float-left">
-                    <div class="page-title">
-                        <h1>Dashboard</h1>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-8">
-                <div class="page-header float-right">
-                    <div class="page-title">
-                        <ol class="breadcrumb text-right">
-                            <li class="active">Dashboard</li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="content mt-3">
-
-            <div class="col-sm-12">
-                <div class="alert  alert-success alert-dismissible fade show" role="alert">
-                    <span class="badge badge-pill badge-success">Success</span> You successfully read this important alert message.
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-            </div>
-
-
-            <div class="col-sm-6 col-lg-3">
-                <div class="card text-white bg-flat-color-1">
-                    <div class="card-body pb-0">
-                        <div class="dropdown float-right">
-                            <button class="btn bg-transparent dropdown-toggle theme-toggle text-light" type="button" id="dropdownMenuButton1" data-toggle="dropdown">
-                                <i class="fa fa-cog"></i>
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <div class="dropdown-menu-content">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                </div>
-                            </div>
-                        </div>
-                        <h4 class="mb-0">
-                            <span class="count">10468</span>
-                        </h4>
-                        <p class="text-light">Members online</p>
-
-                        <div class="chart-wrapper px-0" style="height:70px;" height="70">
-                            <canvas id="widgetChart1"></canvas>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-            <!--/.col-->
-
-            <div class="col-sm-6 col-lg-3">
-                <div class="card text-white bg-flat-color-2">
-                    <div class="card-body pb-0">
-                        <div class="dropdown float-right">
-                            <button class="btn bg-transparent dropdown-toggle theme-toggle text-light" type="button" id="dropdownMenuButton2" data-toggle="dropdown">
-                                <i class="fa fa-cog"></i>
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                                <div class="dropdown-menu-content">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                </div>
-                            </div>
-                        </div>
-                        <h4 class="mb-0">
-                            <span class="count">10468</span>
-                        </h4>
-                        <p class="text-light">Members online</p>
-
-                        <div class="chart-wrapper px-0" style="height:70px;" height="70">
-                            <canvas id="widgetChart2"></canvas>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <!--/.col-->
-
-            <div class="col-sm-6 col-lg-3">
-                <div class="card text-white bg-flat-color-3">
-                    <div class="card-body pb-0">
-                        <div class="dropdown float-right">
-                            <button class="btn bg-transparent dropdown-toggle theme-toggle text-light" type="button" id="dropdownMenuButton3" data-toggle="dropdown">
-                                <i class="fa fa-cog"></i>
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
-                                <div class="dropdown-menu-content">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                </div>
-                            </div>
-                        </div>
-                        <h4 class="mb-0">
-                            <span class="count">10468</span>
-                        </h4>
-                        <p class="text-light">Members online</p>
-
-                    </div>
-
-                    <div class="chart-wrapper px-0" style="height:70px;" height="70">
-                        <canvas id="widgetChart3"></canvas>
-                    </div>
-                </div>
-            </div>
-            <!--/.col-->
-
-            <div class="col-sm-6 col-lg-3">
-                <div class="card text-white bg-flat-color-4">
-                    <div class="card-body pb-0">
-                        <div class="dropdown float-right">
-                            <button class="btn bg-transparent dropdown-toggle theme-toggle text-light" type="button" id="dropdownMenuButton4" data-toggle="dropdown">
-                                <i class="fa fa-cog"></i>
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton4">
-                                <div class="dropdown-menu-content">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                </div>
-                            </div>
-                        </div>
-                        <h4 class="mb-0">
-                            <span class="count">10468</span>
-                        </h4>
-                        <p class="text-light">Members online</p>
-
-                        <div class="chart-wrapper px-3" style="height:70px;" height="70">
-                            <canvas id="widgetChart4"></canvas>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <!--/.col-->
-
-            <div class="col-lg-3 col-md-6">
-                <div class="social-box facebook">
-                    <i class="fa fa-facebook"></i>
-                    <ul>
-                        <li>
-                            <span class="count">40</span> k
-                            <span>friends</span>
-                        </li>
-                        <li>
-                            <span class="count">450</span>
-                            <span>feeds</span>
-                        </li>
-                    </ul>
-                </div>
-                <!--/social-box-->
-            </div>
-            <!--/.col-->
-
-
-            <div class="col-lg-3 col-md-6">
-                <div class="social-box twitter">
-                    <i class="fa fa-twitter"></i>
-                    <ul>
-                        <li>
-                            <span class="count">30</span> k
-                            <span>friends</span>
-                        </li>
-                        <li>
-                            <span class="count">450</span>
-                            <span>tweets</span>
-                        </li>
-                    </ul>
-                </div>
-                <!--/social-box-->
-            </div>
-            <!--/.col-->
-
-
-            <div class="col-lg-3 col-md-6">
-                <div class="social-box linkedin">
-                    <i class="fa fa-linkedin"></i>
-                    <ul>
-                        <li>
-                            <span class="count">40</span> +
-                            <span>contacts</span>
-                        </li>
-                        <li>
-                            <span class="count">250</span>
-                            <span>feeds</span>
-                        </li>
-                    </ul>
-                </div>
-                <!--/social-box-->
-            </div>
-            <!--/.col-->
-
-
-            <div class="col-lg-3 col-md-6">
-                <div class="social-box google-plus">
-                    <i class="fa fa-google-plus"></i>
-                    <ul>
-                        <li>
-                            <span class="count">94</span> k
-                            <span>followers</span>
-                        </li>
-                        <li>
-                            <span class="count">92</span>
-                            <span>circles</span>
-                        </li>
-                    </ul>
-                </div>
-                <!--/social-box-->
-            </div>
-            <!--/.col-->
-
-            <div class="col-xl-7">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <h4 class="card-title mb-0">Traffic</h4>
-                                <div class="small text-muted">October 2017</div>
-                            </div>
-                            <!--/.col-->
-                            <div class="col-sm-8 hidden-sm-down">
-                                <button type="button" class="btn btn-primary float-right bg-flat-color-1"><i class="fa fa-cloud-download"></i></button>
-                                <div class="btn-toolbar float-right" role="toolbar" aria-label="Toolbar with button groups">
-                                    <div class="btn-group mr-3" data-toggle="buttons" aria-label="First group">
-                                        <label class="btn btn-outline-secondary">
-                                            <input type="radio" name="options" id="option1"> Day
-                                        </label>
-                                        <label class="btn btn-outline-secondary active">
-                                            <input type="radio" name="options" id="option2" checked=""> Month
-                                        </label>
-                                        <label class="btn btn-outline-secondary">
-                                            <input type="radio" name="options" id="option3"> Year
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--/.col-->
-
-
-                        </div>
-                        <!--/.row-->
-                        <div class="chart-wrapper mt-4">
-                            <canvas id="trafficChart" style="height:200px;" height="200"></canvas>
-                        </div>
-
-                    </div>
-                    <div class="card-footer">
-                        <ul>
-                            <li>
-                                <div class="text-muted">Visits</div>
-                                <strong>29.703 Users (40%)</strong>
-                                <div class="progress progress-xs mt-2" style="height: 5px;">
-                                    <div class="progress-bar bg-success" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </li>
-                            <li class="hidden-sm-down">
-                                <div class="text-muted">Unique</div>
-                                <strong>24.093 Users (20%)</strong>
-                                <div class="progress progress-xs mt-2" style="height: 5px;">
-                                    <div class="progress-bar bg-info" role="progressbar" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="text-muted">Pageviews</div>
-                                <strong>78.706 Views (60%)</strong>
-                                <div class="progress progress-xs mt-2" style="height: 5px;">
-                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </li>
-                            <li class="hidden-sm-down">
-                                <div class="text-muted">New Users</div>
-                                <strong>22.123 Users (80%)</strong>
-                                <div class="progress progress-xs mt-2" style="height: 5px;">
-                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </li>
-                            <li class="hidden-sm-down">
-                                <div class="text-muted">Bounce Rate</div>
-                                <strong>40.15%</strong>
-                                <div class="progress progress-xs mt-2" style="height: 5px;">
-                                    <div class="progress-bar" role="progressbar" style="width: 40%;" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xl-5 col-lg-6">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="stat-widget-one">
-                            <div class="stat-icon dib"><i class="ti-money text-success border-success"></i></div>
-                            <div class="stat-content dib">
-                                <div class="stat-text">Total Profit</div>
-                                <div class="stat-digit">1,100,012,100 VNĐ</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-xl-5 col-lg-6">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="stat-widget-one">
-                            <div class="stat-icon dib"><i class="ti-user text-primary border-primary"></i></div>
-                            <div class="stat-content dib">
-                                <div class="stat-text">New Customer</div>
-                                <div class="stat-digit">961</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xl-5 col-lg-6">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="stat-widget-one">
-                            <div class="stat-icon dib"><i class="ti-layout-grid2 text-warning border-warning"></i></div>
-                            <div class="stat-content dib">
-                                <div class="stat-text">Active Projects</div>
-                                <div class="stat-digit">770</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xl-6">
-                <div class="card">
-                    <div class="card-header">
-                        <h4>World</h4>
-                    </div>
-                    <div class="Vector-map-js">
-                        <div id="vmap" class="vmap" style="height: 265px;"></div>
-                    </div>
-                </div>
-                <!-- /# card -->
-            </div>
-
-
-        </div> <!-- .content -->
+	<!-- page title area start -->
+	<div class="page-title-area">
+		<div class="row align-items-center">
+			<div class="col-sm-6">
+				<div class="breadcrumbs-area clearfix">
+					<h4 class="page-title pull-left">Trang chủ</h4>
+				</div>
+			</div>
+			<div class="col-sm-6 clearfix">
+				<div class="user-profile pull-right">
+					<img class="avatar user-thumb"
+						src="<c:url value='/template/admin/assets/images/author/avatar.png'/> " alt="avatar">
+					<h4 class="user-name dropdown-toggle" data-toggle="dropdown">
+						<%=SecurityUtils.getPrincipal().getFullName()%><i class="fa fa-angle-down"></i>
+					</h4>
+					<div class="dropdown-menu">
+						<a	class="dropdown-item" href="#">Cài đặt</a> <a
+							class="dropdown-item" href="<c:url value='/thoat'/> ">Thoát</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- page title area end -->
+	<div class="main-content-inner">
+		<div class="row">
+			<!-- seo fact area start -->
+			<div class="col-lg-8">
+				<div class="row">
+					<div class="col-md-6 mt-5 mb-3">
+						<div class="card">
+							<div class="seo-fact sbg1">
+								<div
+									class="p-4 d-flex justify-content-between align-items-center">
+									<div class="seofct-icon">
+										<i class="ti-thumb-up"></i> Likes
+									</div>
+									<h2>2,315</h2>
+								</div>
+								<canvas id="seolinechart1" height="50"></canvas>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 mt-md-5 mb-3">
+						<div class="card">
+							<div class="seo-fact sbg2">
+								<div
+									class="p-4 d-flex justify-content-between align-items-center">
+									<div class="seofct-icon">
+										<i class="ti-share"></i> Share
+									</div>
+									<h2>3,984</h2>
+								</div>
+								<canvas id="seolinechart2" height="50"></canvas>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 mb-3 mb-lg-0">
+						<div class="card">
+							<div class="seo-fact sbg3">
+								<div
+									class="p-4 d-flex justify-content-between align-items-center">
+									<div class="seofct-icon">Impressions</div>
+									<canvas id="seolinechart3" height="60"></canvas>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="card">
+							<div class="seo-fact sbg4">
+								<div
+									class="p-4 d-flex justify-content-between align-items-center">
+									<div class="seofct-icon">New Users</div>
+									<canvas id="seolinechart4" height="60"></canvas>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- seo fact area end -->
+			<!-- Social Campain area start -->
+			<div class="col-lg-4 mt-5">
+				<div class="card">
+					<div class="card-body pb-0">
+						<h4 class="header-title">Social ads Campain</h4>
+						<div id="socialads" style="height: 245px;"></div>
+					</div>
+				</div>
+			</div>
+			<!-- Social Campain area end -->
+			<!-- Statistics area start -->
+			<div class="col-lg-8 mt-5">
+				<div class="card">
+					<div class="card-body">
+						<h4 class="header-title">User Statistics</h4>
+						<div id="user-statistics"></div>
+					</div>
+				</div>
+			</div>
+			<!-- Statistics area end -->
+			<!-- Advertising area start -->
+			<div class="col-lg-4 mt-5">
+				<div class="card h-full">
+					<div class="card-body">
+						<h4 class="header-title">Advertising & Marketing</h4>
+						<canvas id="seolinechart8" height="233"></canvas>
+					</div>
+				</div>
+			</div>
+			<!-- Advertising area end -->
+			<!-- sales area start -->
+			<div class="col-xl-9 col-ml-8 col-lg-8 mt-5">
+				<div class="card">
+					<div class="card-body">
+						<h4 class="header-title">Sales</h4>
+						<div id="salesanalytic"></div>
+					</div>
+				</div>
+			</div>
+			<!-- sales area end -->
+			<!-- timeline area start -->
+			<div class="col-xl-3 col-ml-4 col-lg-4 mt-5">
+				<div class="card">
+					<div class="card-body">
+						<h4 class="header-title">Timeline</h4>
+						<div class="timeline-area">
+							<div class="timeline-task">
+								<div class="icon bg1">
+									<i class="fa fa-envelope"></i>
+								</div>
+								<div class="tm-title">
+									<h4>Rashed sent you an email</h4>
+									<span class="time"><i class="ti-time"></i>09:35</span>
+								</div>
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+									Esse distinctio itaque at.</p>
+							</div>
+							<div class="timeline-task">
+								<div class="icon bg2">
+									<i class="fa fa-exclamation-triangle"></i>
+								</div>
+								<div class="tm-title">
+									<h4>Rashed sent you an email</h4>
+									<span class="time"><i class="ti-time"></i>09:35</span>
+								</div>
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+									Esse distinctio itaque at.</p>
+							</div>
+							<div class="timeline-task">
+								<div class="icon bg2">
+									<i class="fa fa-exclamation-triangle"></i>
+								</div>
+								<div class="tm-title">
+									<h4>Rashed sent you an email</h4>
+									<span class="time"><i class="ti-time"></i>09:35</span>
+								</div>
+							</div>
+							<div class="timeline-task">
+								<div class="icon bg3">
+									<i class="fa fa-bomb"></i>
+								</div>
+								<div class="tm-title">
+									<h4>Rashed sent you an email</h4>
+									<span class="time"><i class="ti-time"></i>09:35</span>
+								</div>
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+									Esse distinctio itaque at.</p>
+							</div>
+							<div class="timeline-task">
+								<div class="icon bg3">
+									<i class="ti-signal"></i>
+								</div>
+								<div class="tm-title">
+									<h4>Rashed sent you an email</h4>
+									<span class="time"><i class="ti-time"></i>09:35</span>
+								</div>
+								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+									Esse distinctio itaque at.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- timeline area end -->
+			<!-- map area start -->
+			<div class="col-xl-5 col-lg-12 mt-5">
+				<div class="card">
+					<div class="card-body">
+						<h4 class="header-title">Marketing Area</h4>
+						<div id="seomap"></div>
+					</div>
+				</div>
+			</div>
+			<!-- map area end -->
+			<!-- testimonial area start -->
+			<div class="col-xl-7 col-lg-12 mt-5">
+				<div class="card">
+					<div class="card-body bg1">
+						<h4 class="header-title text-white">Client Feadback</h4>
+						<div class="testimonial-carousel owl-carousel">
+							<div class="tst-item">
+								<div class="tstu-img">
+									<img src="assets/images/team/team-author1.jpg"
+										alt="author image">
+								</div>
+								<div class="tstu-content">
+									<h4 class="tstu-name">Abel Franecki</h4>
+									<span class="profsn">Designer</span>
+									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+										Vitae laborum ut nihil numquam a aliquam alias necessitatibus
+										ipsa soluta quam!</p>
+								</div>
+							</div>
+							<div class="tst-item">
+								<div class="tstu-img">
+									<img src="assets/images/team/team-author2.jpg"
+										alt="author image">
+								</div>
+								<div class="tstu-content">
+									<h4 class="tstu-name">Abel Franecki</h4>
+									<span class="profsn">Designer</span>
+									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+										Vitae laborum ut nihil numquam a aliquam alias necessitatibus
+										ipsa soluta quam!</p>
+								</div>
+							</div>
+							<div class="tst-item">
+								<div class="tstu-img">
+									<img src="assets/images/team/team-author3.jpg"
+										alt="author image">
+								</div>
+								<div class="tstu-content">
+									<h4 class="tstu-name">Abel Franecki</h4>
+									<span class="profsn">Designer</span>
+									<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+										Vitae laborum ut nihil numquam a aliquam alias necessitatibus
+										ipsa soluta quam!</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- testimonial area end -->
+		</div>
+	</div>
 </body>
 </html>

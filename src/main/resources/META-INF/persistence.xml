@@ -7,6 +7,7 @@
     	<class>com.ryuland.entity.TransactionEntity</class>
     	<class>com.ryuland.entity.UserEntity</class>
     	<class>com.ryuland.entity.DetailTransactionEntity</class>
+    	<class>com.ryuland.entity.ItemCart</class>
     </persistence-unit>
 </persistence>
 

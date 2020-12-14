@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!doctype html>
 <html class="no-js" lang="zxx">
 <head>
@@ -29,16 +28,7 @@
 	        <div class="slide animation__style10 bg-image--1 fullscreen align__center--left">
 	            <div class="container">
 	            	<div class="row">
-	            		<div class="col-lg-12">
-	            			<div class="slider__content">
-		            			<div class="contentbox">
-		            				<h2>Buy <span>your </span></h2>
-		            				<h2>favourite <span>Book </span></h2>
-		            				<h2>from <span>Here </span></h2>
-				                   	<a class="shopbtn" href="#">shop now</a>
-		            			</div>
-	            			</div>
-	            		</div>
+	    		
 	            	</div>
 	            </div>
             </div>
@@ -47,16 +37,7 @@
 	        <div class="slide animation__style10 bg-image--7 fullscreen align__center--left">
 	            <div class="container">
 	            	<div class="row">
-	            		<div class="col-lg-12">
-	            			<div class="slider__content">
-		            			<div class="contentbox">
-		            				<h2>Buy <span>your </span></h2>
-		            				<h2>favourite <span>Book </span></h2>
-		            				<h2>from <span>Here </span></h2>
-				                   	<a class="shopbtn" href="#">shop now</a>
-		            			</div>
-	            			</div>
-	            		</div>
+	            		
 	            	</div>
 	            </div>
             </div>

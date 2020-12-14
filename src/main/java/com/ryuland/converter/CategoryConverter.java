@@ -22,4 +22,9 @@ public class CategoryConverter {
 		return entity;
 	}
 	
+	public CategoryEntity toEntity(CategoryEntity entity, CategoryDTO dto) {
+		entity = modelMapper.map(dto, CategoryEntity.class);
+		return entity;
+	}
+	
 }

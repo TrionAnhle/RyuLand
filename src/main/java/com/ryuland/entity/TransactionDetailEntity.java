@@ -24,6 +24,18 @@ public class TransactionDetailEntity {
 	
 	@Column(name = "quantity")
 	private Long quantity;
+	
+	@Column(name = "priceatbuy")
+	private Long priceAtBuy;
+	
+	
+	public Long getPriceAtBuy() {
+		return priceAtBuy;
+	}
+
+	public void setPriceAtBuy(Long priceAtBuy) {
+		this.priceAtBuy = priceAtBuy;
+	}
 
 	public TransactionProductId getId() {
 		return id;

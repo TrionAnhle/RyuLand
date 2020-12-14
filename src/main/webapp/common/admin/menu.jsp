@@ -1,45 +1,31 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
     <!-- Left Panel -->
 
-    <aside id="left-panel" class="left-panel">
-        <nav class="navbar navbar-expand-sm navbar-default">
-
-            <div class="navbar-header">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand" href="./"><img src="<c:url value='/template/admin/images/logo.png'/> " alt="Logo"></a>
-                <a class="navbar-brand hidden" href="./"><img src="<c:url value='/template/admin/images/logo2.png'/> " alt="Logo"></a>
+    <div class="sidebar-menu">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <a href="index.html"><img src="<c:url value='/template/admin/assets/images/icon/logo.png'/> " alt="logo"></a>
+                </div>
             </div>
-
-            <div id="main-menu" class="main-menu collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active">
-                        <a href="index.html"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
-                    </li>
-                    <h3 class="menu-title">QUẢN LÝ</h3><!-- /.menu-title -->
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-archive"></i>Sản phẩm</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-list"></i><a href="<c:url value='/quan-tri/san-pham/danh-sach'/>">Danh sách</a></li>
-                            <li><i class="fa fa-truck"></i><a href="ui-badges.html">Nhập hàng</a></li>
-                            <li><i class="fa fa-sitemap"></i><a href=" <c:url value="/quan-tri/the-loai"/> ">Thể loại</a></li>
+            <div class="main-menu">
+                <div class="menu-inner">
+                    <nav>
+                        <ul class="metismenu" id="menu">
+                            <li>
+                                <a href="<c:url value='/quan-tri/trang-chu'/> "><i class="ti-dashboard"></i><span>Bảng điểu khiển</span></a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" aria-expanded="true"><i class="ti-archive"></i><span>Sản phẩm</span></a>
+                                <ul class="collapse">
+                                    <li><a href="<c:url value='/quan-tri/san-pham/danh-sach'/>">Danh sách</a></li>
+                                    <li><a href="<c:url value='/quan-tri/the-loai'/>">Thể loại</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="<c:url value='/quan-tri/don-hang/danh-sach'/> "><i class="ti-clipboard"></i><span>Đơn hàng</span></a>
+                            </li>
                         </ul>
-                    </li>
-                    <li class="active">
-                        <a href="index.html"> <i class="menu-icon fa fa-edit"></i>Đơn hàng</a>
-                    </li>
-                    <li class="menu-item-has-children dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-users"></i>Tài khoản</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-user"></i><a href="tables-basic.html">Quản trị</a></li>
-                            <li><i class="fa fa-user"></i><a href="tables-data.html">Khách hàng</a></li>
-                        </ul>
-                    </li>
-                    <li class="active">
-                        <a href="index.html"> <i class="menu-icon fa fa-phone"></i>Thông tin cửa hàng</a>
-                    </li>
-                </ul>
-            </div><!-- /.navbar-collapse -->
-        </nav>
-    </aside><!-- /#left-panel -->
+                    </nav>
+                </div>
+            </div>
+        </div>

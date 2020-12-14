@@ -35,5 +35,5 @@
 	</bean>
 	
 	<mvc:resources mapping="/template/**" location="/template/" />
-	
+	<mvc:resources mapping="/upload/**" location="/upload/" />
 </beans>
