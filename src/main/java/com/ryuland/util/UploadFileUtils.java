@@ -42,4 +42,13 @@ public class UploadFileUtils {
 		return dto;
 	}
 	
+	public void deleteFile(String nguon) {
+		String uploadRootPath = context.getRealPath("upload");
+		File uploadRootDir = new File(uploadRootPath);
+		File serverFile = new File(uploadRootDir.getAbsolutePath() + File.separator + nguon);
+		if(serverFile.delete()) {
+			System.out.println("Xoa anh thanh công");
+		}else System.out.println("Xoa anh that bai");
+	}
+	
 }

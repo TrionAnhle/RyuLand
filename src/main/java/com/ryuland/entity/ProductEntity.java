@@ -19,7 +19,8 @@ public class ProductEntity extends BaseEntity{
 	@Column(name = "code")
 	private String code;
 	
-	@Column(name = "description")
+	
+	@Column(name = "description", columnDefinition = "text")
 	private String description;
 	
 	@Column(name = "pathimage")
@@ -29,7 +30,7 @@ public class ProductEntity extends BaseEntity{
 	private Long price;
 	
 	@Column(name = "discount")
-	private float discount;
+	private Integer discount;
 	
 	@Column(name = "quantity")
 	private Long quantity;
@@ -112,11 +113,11 @@ public class ProductEntity extends BaseEntity{
 		this.price = price;
 	}
 
-	public float getDiscount() {
+	public Integer getDiscount() {
 		return discount;
 	}
 
-	public void setDiscount(float discount) {
+	public void setDiscount(Integer discount) {
 		this.discount = discount;
 	}
 

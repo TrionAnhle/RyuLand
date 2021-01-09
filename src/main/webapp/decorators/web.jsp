@@ -1,5 +1,7 @@
 <%@include file="/common/taglib.jsp"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<c:url var="productAPI" value="/api/web/product"/>
+<c:url var="cartAPI" value="/api/web/cart"/>
 <!doctype html>
 <html class="no-js" lang="zxx">
 <head>
@@ -13,21 +15,26 @@
 	<link rel="shortcut icon" href="<c:url value='/template/web/images/favicon.ico'/>">
 	<link rel="apple-touch-icon" href=" <c:url value='/template/web/images/icon.png'/> ">
 
-	<!-- Google font (font-family: 'Roboto', sans-serif; Poppins ; Satisfy) -->
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet"> 
-	<link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,600,600i,700,700i,800" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet"> 
-
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href=" <c:url value='/template/web/css/bootstrap.min.css'/> ">
 	<link rel="stylesheet" href=" <c:url value='/template/web/css/plugins.css'/> ">
 	<link rel="stylesheet" href=" <c:url value='/template/web/style.css'/> ">
-
+	<link rel="stylesheet" href=" <c:url value='/template/web/mystyle.css'/> ">
+	
 	<!-- Cusom css -->
    <link rel="stylesheet" href=" <c:url value='/template/web/css/custom.css'/> ">
 
 	<!-- Modernizer js -->
 	<script src="js/vendor/modernizr-3.5.0.min.js"></script>
+	
+	<script src=" <c:url value='/template/web/js/vendor/jquery-3.2.1.min.js'/> "></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.13.4/jquery.mask.min.js"></script>
+	<style type="text/css">
+		.img {
+		  max-width: 100%;
+ 		  height: auto;
+		}
+    </style>
 </head>
 <body>
 	<div class="wrapper" id="wrapper">
@@ -47,66 +54,35 @@
 		                    <div class="modal-product">
 		                        <!-- Start product images -->
 		                        <div class="product-images">
-		                            <div class="main-image images">
-		                                <img alt="big images" src="images/product/big-img/1.jpg">
+		                            <div class="main-image images" id="productModalImage">
+		                                <img alt="big images"  src="">
 		                            </div>
 		                        </div>
 		                        <!-- end product images -->
 		                        <div class="product-info">
-		                            <h1>Simple Fabric Bags</h1>
-		                            <div class="rating__and__review">
-		                                <ul class="rating">
-		                                    <li><span class="ti-star"></span></li>
-		                                    <li><span class="ti-star"></span></li>
-		                                    <li><span class="ti-star"></span></li>
-		                                    <li><span class="ti-star"></span></li>
-		                                    <li><span class="ti-star"></span></li>
-		                                </ul>
-		                                <div class="review">
-		                                    <a href="#">4 customer reviews</a>
-		                                </div>
-		                            </div>
+		                            <h1 id="productModalName">Tên sản phẩm</h1>
+		                            <input type="hidden" id="productModalId" name="productModalId" value="" />
 		                            <div class="price-box-3">
 		                                <div class="s-price-box">
-		                                    <span class="new-price">$17.20</span>
-		                                    <span class="old-price">$45.00</span>
+		                                    <span class="new-price" id="productModalNewPrice">123456</span>
+		                                    <span class="old-price" id="productModalOldPrice">9999999</span>
 		                                </div>
-		                            </div>
-		                            <div class="quick-desc">
-		                                Designed for simplicity and made from high quality materials. Its sleek geometry and material combinations creates a modern look.
-		                            </div>
-		                            <div class="select__color">
-		                                <h2>Select color</h2>
-		                                <ul class="color__list">
-		                                    <li class="red"><a title="Red" href="#">Red</a></li>
-		                                    <li class="gold"><a title="Gold" href="#">Gold</a></li>
-		                                    <li class="orange"><a title="Orange" href="#">Orange</a></li>
-		                                    <li class="orange"><a title="Orange" href="#">Orange</a></li>
-		                                </ul>
-		                            </div>
-		                            <div class="select__size">
-		                                <h2>Select size</h2>
-		                                <ul class="color__list">
-		                                    <li class="l__size"><a title="L" href="#">L</a></li>
-		                                    <li class="m__size"><a title="M" href="#">M</a></li>
-		                                    <li class="s__size"><a title="S" href="#">S</a></li>
-		                                    <li class="xl__size"><a title="XL" href="#">XL</a></li>
-		                                    <li class="xxl__size"><a title="XXL" href="#">XXL</a></li>
-		                                </ul>
-		                            </div>
-		                            <div class="social-sharing">
-		                                <div class="widget widget_socialsharing_widget">
-		                                    <h3 class="widget-title-modal">Share this product</h3>
-		                                    <ul class="social__net social__net--2 d-flex justify-content-start">
-		                                        <li class="facebook"><a href="#" class="rss social-icon"><i class="zmdi zmdi-rss"></i></a></li>
-		                                        <li class="linkedin"><a href="#" class="linkedin social-icon"><i class="zmdi zmdi-linkedin"></i></a></li>
-		                                        <li class="pinterest"><a href="#" class="pinterest social-icon"><i class="zmdi zmdi-pinterest"></i></a></li>
-		                                        <li class="tumblr"><a href="#" class="tumblr social-icon"><i class="zmdi zmdi-tumblr"></i></a></li>
-		                                    </ul>
-		                                </div>
-		                            </div>
+		                            </div>        	
+		                           	<strong id="productModelDiscount" class="text-danger">100%</strong>
+		                           	<div>
+		                           		<strong>Số lượng mua: </strong> 
+		                           		<input type="number" class="form-control " value="1" oninput="this.value = Math.abs(this.value)"  id="productModalQuantity" min="1" />
+		                           	</div>
+		                           	
 		                            <div class="addtocart-btn">
-		                                <a href="#">Add to cart</a>
+		                                <a href="#" onclick="addItemCartByProductModal()">Thêm vào giỏ hàng</a>
+		                            </div>
+		                           	
+		                           	<div class="price-box-3">
+			                           	<label for="productModalDesc"><strong>Mô tả sản phẩm: </strong></label>
+			                            <div id="productModalDesc">
+			                                Mô tả ngắn sản phẩm
+			                            </div>
 		                            </div>
 		                        </div>
 		                    </div>
@@ -116,9 +92,121 @@
 		    </div>
 		</div>
 		<!-- END QUICKVIEW PRODUCT -->
+		<!-- START QUICK ADD CART  -->
+		<div class="modal fade" id="quickAddCartModal" data-keyboard="false" data-backdrop="static">
+			<div class="modal-dialog">
+				<form id="formSubmitAddCart">
+					<div class="modal-content">
+						<!-- Modal Header -->
+						<div class="modal-header">
+							<h4 class="modal-title" id="quickAddCartName">Thêm vào giỏ hàng</h4>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
+
+						<!-- Modal body -->
+						<div class="container">
+							<div class="modal-body mx-3">							
+								<div class="md-form mb-3">
+									<input type="hidden" id="quickAddCartId" name="quickAddCartId" value="" /> 
+									<input placeholder="Số lượng muốn mua" type="number" id="quickAddCartQuantity" name="quickAddCartQuantity" min="1" oninput="this.value = Math.abs(this.value)"  value="1" class="form-control validate"/>
+								</div>
+							</div>	
+						</div>
+						<!-- Modal footer -->
+						<div class="modal-footer">
+							<button type="submit" class="btn btn-success"
+								id="btnAddItemCart" >Thêm vào giỏ</button>
+							<button type="button" class="btn btn-danger" data-dismiss="modal">Hủy</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!-- END QUICK ADD CART  -->
 	</div>
 	<!-- JS Files -->
-	<script src=" <c:url value='/template/web/js/vendor/jquery-3.2.1.min.js'/> "></script>
+	<script>
+		function openProductModal(id) {
+			$.ajax({
+	            url: '${productAPI}?id='+id,
+	            type: 'GET',
+	            contentType: 'application/json',
+	            dataType: 'json',
+	            success: function (result) {
+	            	$('#productModalImage').empty();
+	            	$('#productModalId').val(result.id);
+	            	$('#productModalQuantity').val(1);
+	        		$('#productModalImage').prepend("<img src=\"${pageContext.servletContext.contextPath}/upload/"+result.pathImage+"\" style=\"width:270px;height:340px;\"  alt=\"product image\">");
+	            	$('#productModalName').text(result.name);
+	            	var oldPrice = parseFloat(result.price).toLocaleString(window.document.documentElement.lang);
+	            	var newPrice = parseFloat((result.price-result.price*(result.discount/100))).toLocaleString(window.document.documentElement.lang);
+	            	$('#productModalNewPrice').text(newPrice);
+	            	$('#productModalOldPrice').text(oldPrice);
+	            	$('#productModelDiscount').text("Giảm giá: "+result.discount+"%");
+	            	$('#productModalDesc').text(result.description);
+	            	$("#productmodal").modal('show');
+	            },
+	            error: function (error) {
+	            	$("#productmodal").modal('show');
+	            }
+	        });
+		}
+		function openAddCartModal(id){
+			$.ajax({
+	            url: '${productAPI}?id='+id,
+	            type: 'GET',
+	            contentType: 'application/json',
+	            dataType: 'json',
+	            success: function (result) {
+	            	$('#quickAddCartId').val(result.id);
+	            	$('#quickAddCartName').text(result.name);
+	            	$("#quickAddCartModal").modal('show');
+	            },
+	            error: function (error) {
+	            	$("#quickAddCartModal").modal('show');
+	            }
+	        });
+		}
+		//// api------------------------------------------------------------
+		$('#btnAddItemCart').click(function (evt) {
+				evt.preventDefault();
+				var data = {};
+			    
+			    data["productId"] = $('#quickAddCartId').val();
+			    data["quantity"] =  $('#quickAddCartQuantity').val();
+			    
+			    addItemCart(data)
+		});
+		
+		function addItemCartByProductModal(){
+			var data = {};
+			
+		    data["productId"] = $('#productModalId').val();
+		    data["quantity"] =  $('#productModalQuantity').val();
+		    
+		    addItemCart(data)
+		};
+		
+		function addItemCart(data){
+			$.ajax({
+				url: '${cartAPI}',
+				type: 'POST',
+				contentType: 'application/json',
+				data: JSON.stringify(data),
+				dataType: 'json',
+				success: function (result) {
+					location.reload(true);
+	            },
+	            error: function (error) {
+	            	location.reload(true);
+	            }
+			});
+		}
+		
+	</script>
+	<script>
+		$('.numberformat').mask("#,##0", {reverse: true});
+	</script>
 	<script src=" <c:url value='/template/web/js/popper.min.js'/> "></script>
 	<script src=" <c:url value='/template/web/js/bootstrap.min.js'/> "></script>
 	<script src=" <c:url value='/template/web/js/plugins.js'/> "></script>

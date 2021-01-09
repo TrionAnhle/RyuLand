@@ -1,5 +1,6 @@
 eclipse.preferences.version=1
-encoding//src/main/java/com/ryuland/api/ProductAPI.java=UTF-8
+encoding//src/main/java/com/ryuland/api/admin/ProductAPI.java=UTF-8
+encoding//src/main/java/com/ryuland/api/web/ProductAPI.java=UTF-8
 encoding//src/main/java/com/ryuland/util/MessageUtils.java=UTF-8
 encoding//src/main/java/com/ryuland/util/StringUtils.java=UTF-8
 encoding//src/main/java/com/ryuland/util/UploadFileUtils.java=UTF-8

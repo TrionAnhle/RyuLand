@@ -8,7 +8,7 @@ public class ProductDTO extends AbstractDTO<ProductDTO>{
 	private String pathImage;
 	private String base64;
 	private Long price;
-	private float discount;
+	private Integer discount;
 	private Long quantity;
 	private Long categoryId;
 	private String categoryCode;
@@ -64,10 +64,10 @@ public class ProductDTO extends AbstractDTO<ProductDTO>{
 	public void setPrice(Long price) {
 		this.price = price;
 	}
-	public float getDiscount() {
+	public Integer getDiscount() {
 		return discount;
 	}
-	public void setDiscount(float discount) {
+	public void setDiscount(Integer discount) {
 		this.discount = discount;
 	}
 	public Long getQuantity() {
@@ -76,12 +76,5 @@ public class ProductDTO extends AbstractDTO<ProductDTO>{
 	public void setQuantity(Long quantity) {
 		this.quantity = quantity;
 	}
-//	public CategoryDTO getCategory() {
-//		return category;
-//	}
-//	public void setCategory(CategoryDTO category) {
-//		this.category = category;
-//	}
-	
 	
 }

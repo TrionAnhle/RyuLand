@@ -77,7 +77,6 @@
 	</div>
 	<script>
 		$('.numberformat').mask("#,##0", {reverse: true});
-		
 	</script>
 	
     <!-- bootstrap 4 js -->

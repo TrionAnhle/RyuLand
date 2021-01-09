@@ -14,5 +14,28 @@ public class TransactionProductId implements Serializable{
 	
 	@Column(name = "product_id")
 	private Long productId;
+
+	public Long getTransactionId() {
+		return transactionId;
+	}
+
+	public void setTransactionId(Long transactionId) {
+		this.transactionId = transactionId;
+	}
+
+	public Long getProductId() {
+		return productId;
+	}
+
+	public void setProductId(Long productId) {
+		this.productId = productId;
+	}
+
+	public TransactionProductId(Long transactionId, Long productId) {
+		super();
+		this.transactionId = transactionId;
+		this.productId = productId;
+	}
+	
 	
 }

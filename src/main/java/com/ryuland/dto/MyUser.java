@@ -15,6 +15,8 @@ public class MyUser extends User{
 		super(username, password, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked, authorities);	
 	}
 	
+	private Long id;
+	
 	private String fullName;
 
 	private String phone;
@@ -24,6 +26,16 @@ public class MyUser extends User{
 	private String address;
 	
 	private String email;
+	
+	
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
 
 	public String getFullName() {
 		return fullName;

@@ -1,5 +1,6 @@
 package com.ryuland.service.impl;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,12 +13,16 @@ import com.ryuland.dto.ProductDTO;
 import com.ryuland.entity.CategoryEntity;
 import com.ryuland.entity.ProductEntity;
 import com.ryuland.repository.ICategoryRepository;
+import com.ryuland.repository.IOrderDetailRepository;
 import com.ryuland.repository.IProductRepository;
 import com.ryuland.service.IProductService;
 import com.ryuland.util.UploadFileUtils;
 
 @Service
 public class ProductService implements IProductService{
+	
+	@Autowired
+	private IOrderDetailRepository orderDetailRepository;
 	
 	@Autowired
 	private IProductRepository productRepository;
@@ -59,7 +64,13 @@ public class ProductService implements IProductService{
 		ProductEntity product = new ProductEntity();
 		if(dto.getId() != null) {
 			ProductEntity oldProduct = productRepository.findOne(dto.getId());
+			if(dto.getPathImage() != null) {
+				uploadFile.deleteFile(oldProduct.getPathImage());
+			}
+			
 			product = productConverter.toEntity(oldProduct, dto);
+			product.setCreatedDate(oldProduct.getCreatedDate());
+			product.setCreatedBy(oldProduct.getCreatedBy());
 		}else {
 			product = productConverter.toEntity(dto);
 		}
@@ -71,6 +82,40 @@ public class ProductService implements IProductService{
 	@Transactional
 	public void delete(Long id) {
 		productRepository.delete(id);
+	}
+
+	@Override
+	public List<ProductDTO> findListByTime() {
+		List<ProductEntity> entities = productRepository.findListByTime();
+		List<ProductDTO> models = new ArrayList<ProductDTO>();
+		for(ProductEntity i : entities) {
+			ProductDTO dto = productConverter.toDTO(i);
+			models.add(dto);
+		}
+		return models;
+	}
+
+	@Override
+	public List<ProductDTO> findListByBuy() {
+		List<BigInteger> listId = orderDetailRepository.findProductIdByMostBuy();
+		List<ProductDTO> models = new ArrayList<>();
+		for(BigInteger i : listId) {
+			ProductEntity entity = productRepository.findOne(Long.parseLong(i.toString()));
+			ProductDTO dto = productConverter.toDTO(entity);
+			models.add(dto);
+		}
+		return models;
+	}
+
+	@Override
+	public List<ProductDTO> findListByDiscount() {
+		List<ProductEntity> entities = productRepository.findListByDiscount();
+		List<ProductDTO> models = new ArrayList<ProductDTO>();
+		for(ProductEntity i : entities) {
+			ProductDTO dto = productConverter.toDTO(i);
+			models.add(dto);
+		}
+		return models;
 	}
 
 }

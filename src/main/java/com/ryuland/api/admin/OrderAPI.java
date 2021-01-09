@@ -1,4 +1,4 @@
-package com.ryuland.api;
+package com.ryuland.api.admin;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

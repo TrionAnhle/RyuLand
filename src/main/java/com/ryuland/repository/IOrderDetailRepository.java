@@ -1,5 +1,6 @@
 package com.ryuland.repository;
 
+import java.math.BigInteger;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -12,4 +13,8 @@ public interface IOrderDetailRepository extends JpaRepository<TransactionDetailE
 	
 	@Query("SELECT t FROM TransactionDetailEntity t WHERE t.transaction.id = :transactionid")
 	List<TransactionDetailEntity> finAllById(@Param("transactionid") Long id);
+	
+	@Query(value = "select product_id from transactiondetail group by product_id order by count(quantity) desc", 
+			  nativeQuery = true)
+	List<BigInteger> findProductIdByMostBuy();
 }

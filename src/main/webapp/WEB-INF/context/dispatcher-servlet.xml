@@ -34,6 +34,10 @@
 
 	</bean>
 	
+	<mvc:interceptors>
+		<bean class="com.ryuland.controller.web.LoadCart"></bean>
+	</mvc:interceptors>
+	
 	<mvc:resources mapping="/template/**" location="/template/" />
 	<mvc:resources mapping="/upload/**" location="/upload/" />
 </beans>

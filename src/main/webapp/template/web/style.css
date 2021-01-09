@@ -1,4 +1,4 @@
-﻿/*********************************************************************************
+/*********************************************************************************
 
     Template Name: Boighor Responsive Bootstrap4 Template  
     Version: 1.0
@@ -673,7 +673,11 @@ a {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center; }
-
+.bg-image--10 {
+  background-image: url(images/bg/10.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
 /* spacing */
 .mt--20 {
   margin-top: 20px; }
