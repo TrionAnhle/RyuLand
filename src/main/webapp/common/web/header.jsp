@@ -98,7 +98,7 @@
 												<div class="switcher-options">
 													<div class="switcher-currency-trigger">
 														<div class="setting__menu">
-															<span><a href="#">TÀI KHOẢN</a></span>
+															<span><a href="<c:url value='/tai-khoan'/> ">TÀI KHOẢN</a></span>
 															<span><a href="<c:url value='/don-hang/danh-sach'/>">ĐƠN HÀNG</a></span>
 															<span><a href="<c:url value='/thoat'/>">THOÁT</a></span>
 															

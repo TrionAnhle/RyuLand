@@ -84,8 +84,8 @@
 					<div class="product product__style--3">
 						<div class="col-lg-3 col-md-4 col-sm-6 col-12">
 							<div class="product__thumb">
-								<a class="first__img" href="single-product.html"><img src="${pageContext.servletContext.contextPath}/upload/${i.pathImage}" style="width:270px;height:340px;" alt="product image"></a>
-								<a class="second__img animation1" href="single-product.html"><img src="${pageContext.servletContext.contextPath}/upload/${i.pathImage}" style="width:270px;height:340px;"  alt="product image"></a>
+								<a class="first__img" ><img src="${pageContext.servletContext.contextPath}/upload/${i.pathImage}" style="width:270px;height:340px;" alt="product image"></a>
+								<a class="second__img animation1" ><img src="${pageContext.servletContext.contextPath}/upload/${i.pathImage}" style="width:270px;height:340px;"  alt="product image"></a>
 								<div class="hot__box">
 									<span class="hot-label">NEW</span>
 									<c:if test="${i.discount >0 }">

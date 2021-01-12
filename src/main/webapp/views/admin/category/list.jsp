@@ -4,6 +4,7 @@
 	pageEncoding="UTF-8"%>
 <c:url var="categoryAPI" value="/api/category" />
 <c:url var="categoryURL" value="/quan-tri/the-loai" />
+
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
@@ -32,7 +33,7 @@
 						<%=SecurityUtils.getPrincipal().getFullName()%><i class="fa fa-angle-down"></i>
 					</h4>
 					<div class="dropdown-menu">
-						 <a	class="dropdown-item" href="#">Cài đặt</a> <a
+						 <a	class="dropdown-item" href="">Tài khoản</a> <a
 							class="dropdown-item" href="<c:url value='/thoat'/>">Thoát</a>
 					</div>
 				</div>

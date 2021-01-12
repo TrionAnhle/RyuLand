@@ -31,7 +31,7 @@
 						<%=SecurityUtils.getPrincipal().getFullName()%><i class="fa fa-angle-down"></i>
 					</h4>
 					<div class="dropdown-menu">
-						 <a	class="dropdown-item" href="<c:url value='/quan-tri/tai-khoan'/> ">Tài khoản</a> <a
+						 <a class="dropdown-item" href="<c:url value='/quan-tri/tai-khoan'/> ">Tài khoản</a> <a
 							class="dropdown-item" href="<c:url value='/thoat'/>">Thoát</a>
 					</div>
 				</div>
@@ -51,44 +51,35 @@
 		<div class="col-12 mt-5">
 			<div class="card">
 				<div class="card-body">
-					<h1 align="center">Danh sách đơn hàng</h1>
+					<h1 align="center">Danh sách người dùng</h1>
+					<a class="btn btn-rounded btn-success mb-3" href="<c:url value='/quan-tri/nguoi-dung/them-moi'/> " role="button">
+						<i class="fa fa-plus-circle bigger-110 purple"></i> Thêm mới
+					</a>
+					
 					<div class="data-tables datatable-dark">
 						<table id="dataTable" class="text-center">
 							<thead class="text-capitalize">
 								<tr>
 									<th>Id</th>
 									<th>Họ Tên</th>
+									<th>Vai trò</th>
 									<th>Số điện thoại</th>
+									<th>Email</th>
 									<th>Địa chỉ</th>
-									<th>Ngày đặt</th>
-									<th>Trạng thái</th>
-									<th>Thao tác</th>
 								</tr>
 							</thead>
 							<tbody>
 								<c:forEach var="i" items="${model.listResult}">
 									<tr>
 										<td>${i.id}</td>
-										<td>${i.fullname}</td>
+										<td>${i.fullName}</td>
+										<td>
+											<c:if test="${i.role == 1 }">Quản trị</c:if>
+											<c:if test="${i.role == 2 }">Người dùng</c:if>
+										</td>
 										<td>${i.phone}</td>
+										<td>${i.email}</td>
 										<td>${i.address}</td>
-										<td>
-											<f:formatDate pattern="dd/MM/yyyy HH:mm" value="${i.createdDate}" />
-										</td>
-										<td>
-											<c:if test="${i.status == 0}"><a class="text-danger">Đã hủy</a></c:if>
-		                                    <c:if test="${i.status == 1}"><a class="text-warning">Chưa xác nhận</a></c:if>
-		                                    <c:if test="${i.status == 2}"><a class="text-info">Xác nhận</a></c:if>
-		                                    <c:if test="${i.status == 3}"><a class="text-primary">Vận chuyển</a></c:if>
-		                                    <c:if test="${i.status == 4}"><a class="text-success">Thành công</a></c:if>
-										</td>
-										<td>
-											<c:url var="orderDetailURL" value="/quan-tri/don-hang/chi-tiet">
-												<c:param name="id" value="${i.id}"></c:param>
-											</c:url>
-											<a class="btn btn-sm btn-info" href="${orderDetailURL}"
-											title="Xem chi tiết" ><i class="ti-pencil-alt"></i> </a>
-										</td>
 									</tr>
 								</c:forEach>								
 							</tbody>

@@ -25,11 +25,7 @@
                                 <a href="<c:url value='/quan-tri/don-hang/danh-sach'/> "><i class="ti-clipboard"></i><span>Đơn hàng</span></a>
                             </li>
                             <li>
-                                <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-group"></i><span>Người dùng</span></a>
-                                <ul class="collapse">
-                                    <li><a href="#">Quản trị</a></li>
-                                    <li><a href="#">Khách hàng</a></li>
-                                </ul>
+                                <a href="<c:url value='/quan-tri/nguoi-dung/danh-sach'/> "><i class="fa fa-group"></i><span>Người dùng</span></a>
                             </li>
                         </ul>
                     </nav>

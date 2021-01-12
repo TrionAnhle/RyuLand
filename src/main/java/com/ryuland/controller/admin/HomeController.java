@@ -14,4 +14,10 @@ public class HomeController {
 		return mav;
 	}
 	
+	@RequestMapping(value = "/quan-tri/tai-khoan", method = RequestMethod.GET)
+	public ModelAndView accountPage() {
+		ModelAndView mav = new ModelAndView("admin/account");
+		return mav;
+	}
+	
 }

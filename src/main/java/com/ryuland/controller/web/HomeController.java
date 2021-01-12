@@ -135,4 +135,10 @@ public class HomeController {
 		return mav;
 	}
 	
+	@RequestMapping(value = "/tai-khoan", method = RequestMethod.GET)
+	public ModelAndView accountPage() {
+		ModelAndView mav = new ModelAndView("web/account");
+		return mav;
+	}
+	
 }

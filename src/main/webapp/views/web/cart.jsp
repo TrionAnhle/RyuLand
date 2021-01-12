@@ -64,7 +64,7 @@
                                             	<input type="number" value="${i.quantity}" id="quantity_${i.id}"  onchange="changeSubTotal(${i.id})"
                                             	oninput="this.value = Math.abs(this.value)" min="1">
                                             </td>
-                                            <td class="product-subtotal numberformat" id="subtotal_${i.id}">${((i.price-i.price*(i.discount/100))/10)*(i.quantity)}</td>
+                                            <td class="product-subtotal numberformat col-sm-6" id="subtotal_${i.id}"><f:parseNumber value="${((i.price-(i.price*i.discount/100))/10)*(i.quantity)}" ></f:parseNumber> </td>
                                             <td class="product-remove"><a class="text-danger" onclick="deleteItemCart(${i.id})">Xóa</a></td>
                                         </tr>
                                         </c:forEach>

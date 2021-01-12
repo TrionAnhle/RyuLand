@@ -26,7 +26,7 @@
 						<%=SecurityUtils.getPrincipal().getFullName()%><i class="fa fa-angle-down"></i>
 					</h4>
 					<div class="dropdown-menu">
-						<a	class="dropdown-item" href="#">Cài đặt</a> <a
+						<a class="dropdown-item" href="<c:url value='/quan-tri/tai-khoan'/> ">Tài khoản</a> <a
 							class="dropdown-item" href="<c:url value='/thoat'/> ">Thoát</a>
 					</div>
 				</div>
