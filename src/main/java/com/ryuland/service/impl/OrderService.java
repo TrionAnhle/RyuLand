@@ -156,4 +156,14 @@ public class OrderService implements IOrderService{
 		return orders;
 	}
 
+	@Override
+	public Long getTotalOrderByStatus(int status) {
+		long total = 0L;
+		List<TransactionEntity> etities = orderRepository.findAll();
+		for(TransactionEntity i : etities) {
+			if(i.getStatus().equalsIgnoreCase(String.valueOf(status))) ++total;
+		}
+		return total;
+	}
+
 }
