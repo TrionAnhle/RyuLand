@@ -62,5 +62,21 @@ public class CategoryService implements ICategoryService{
 	public void delete(long id) {
 		categoryRepository.delete(id);
 	}
+
+	@Override
+	public int getTotal() {
+		return (int) categoryRepository.count();
+	}
+
+	@Override
+	public List<CategoryDTO> findAllByPage(long offset, long limit) {
+		List<CategoryDTO> models = new ArrayList<>();
+		List<CategoryEntity> entities = categoryRepository.findAllByPage(offset, limit);
+		for(CategoryEntity entity : entities) {
+			CategoryDTO categoryDto = categoryConverter.toDto(entity);
+			models.add(categoryDto);
+		}
+		return models;
+	}
 	
 }

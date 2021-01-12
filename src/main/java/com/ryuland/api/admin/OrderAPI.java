@@ -18,8 +18,7 @@ public class OrderAPI {
 	
 	@PutMapping(value = "/api/order")
 	public ResponseEntity<OrderDTO> updateOrder(@RequestBody OrderDTO updateOrder){
-		OrderDTO dto = orderService.save(updateOrder);
+		OrderDTO dto = orderService.update(updateOrder);
 		return new ResponseEntity<OrderDTO>(dto, HttpStatus.OK);
-	}
-	
+	}	
 }

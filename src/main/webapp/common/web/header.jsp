@@ -19,23 +19,20 @@
 								<li class="drop"><a href="#">Thể loại</a>
 									<div class="megamenu mega03">
 										<ul class="item item03">
-											<li><a href="shop-grid.html">Shop Grid</a></li>
-											<li><a href="single-product.html">Single Product</a></li>
+											<li><a href="<c:url value='/san-pham/danh-sach?ten=tat-ca'/> ">Tất cả</a></li>
+											<c:forEach var="i" items="${category1}">
+											<li><a href="<c:url value='/san-pham/danh-sach?ten=${i.code}'/> ">${i.name}</a></li>
+											</c:forEach>
 										</ul>
 										<ul class="item item03">
-											<li><a href="my-account.html">My Account</a></li>
-											<li><a href="cart.html">Cart Page</a></li>
-											<li><a href="checkout.html">Checkout Page</a></li>
-											<li><a href="wishlist.html">Wishlist Page</a></li>
-											<li><a href="error404.html">404 Page</a></li>
-											<li><a href="faq.html">Faq Page</a></li>
+											<c:forEach var="i" items="${category2}">
+											<li><a href="<c:url value='/san-pham/danh-sach?ten=${i.code}'/>">${i.name}</a></li>
+											</c:forEach>
 										</ul>
 										<ul class="item item03">
-											<li><a href="shop-grid.html">Bargain Bestsellers</a></li>
-											<li><a href="shop-grid.html">Activity Kits</a></li>
-											<li><a href="shop-grid.html">B&N Classics</a></li>
-											<li><a href="shop-grid.html">Books Under $5</a></li>
-											<li><a href="shop-grid.html">Bargain Books</a></li>
+											<c:forEach var="i" items="${category3}">
+											<li><a href="<c:url value='/san-pham/danh-sach?ten=${i.code}'/>">${i.name}</a></li>
+											</c:forEach>
 										</ul>
 									</div>
 								</li>								
@@ -45,12 +42,12 @@
 					</div>
 					<div class="col-md-6 col-sm-6 col-6 col-lg-4">
 						<ul class="header__sidebar__right d-flex justify-content-end align-items-center">
-							<li class="shop_search"><a class="search__active" href="#"></a></li>
+							<li class="shop_search col-2"><a class="search__active" href="#"></a></li>
 							<security:authorize access = "isAnonymous()">
 								<li class="nav-item"><a class="btn btn-success" href="<c:url value='/dang-nhap'/>">Đăng nhập</a></li>
 							</security:authorize>
 							<security:authorize access = "isAuthenticated()">
-								<li class="wishlist"><a href="#"></a></li>
+								
 								<li class="shopcart"><a class="cartbox_active" href="#"><span class="product_qun">${cart.getCarts().size()}</span></a>
 									<!-- Start Shopping Cart -->
 									<div class="block-minicart minicart__active">
@@ -102,6 +99,7 @@
 													<div class="switcher-currency-trigger">
 														<div class="setting__menu">
 															<span><a href="#">TÀI KHOẢN</a></span>
+															<span><a href="<c:url value='/don-hang/danh-sach'/>">ĐƠN HÀNG</a></span>
 															<span><a href="<c:url value='/thoat'/>">THOÁT</a></span>
 															
 														</div>
@@ -120,38 +118,26 @@
 					<div class="col-lg-12 d-none">
 						<nav class="mobilemenu__nav">
 							<ul class="meninmenu">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="#">Pages</a>
+								
+								<li><a href="<c:url value='/trang-chu'/> ">Trang chủ</a></li>
+								<li><a class="search__active">Tìm kiếm</a></li>
+								<li><a href="#">Thể loại</a>
 									<ul>
-										<li><a href="about.html">About Page</a></li>
-										<li><a href="portfolio.html">Portfolio</a>
-											<ul>
-												<li><a href="portfolio.html">Portfolio</a></li>
-												<li><a href="portfolio-details.html">Portfolio Details</a></li>
-											</ul>
-										</li>
-										<li><a href="my-account.html">My Account</a></li>
-										<li><a href="cart.html">Cart Page</a></li>
-										<li><a href="checkout.html">Checkout Page</a></li>
-										<li><a href="wishlist.html">Wishlist Page</a></li>
-										<li><a href="error404.html">404 Page</a></li>
-										<li><a href="faq.html">Faq Page</a></li>
-										<li><a href="team.html">Team Page</a></li>
+											<li><a href="<c:url value='/san-pham/danh-sach?ten=tat-ca'/> ">Tất cả</a></li>
+										<c:forEach var="i" items="${category1}">
+											<li><a href="<c:url value='/san-pham/danh-sach?ten=${i.code}'/> ">${i.name}</a></li>
+										</c:forEach>
+										
+										<c:forEach var="i" items="${category2}">
+											<li><a href="<c:url value='/san-pham/danh-sach?ten=${i.code}'/>">${i.name}</a></li>
+										</c:forEach>
+										
+										<c:forEach var="i" items="${category3}">
+											<li><a href="<c:url value='/san-pham/danh-sach?ten=${i.code}'/>">${i.name}</a></li>
+										</c:forEach>
 									</ul>
 								</li>
-								<li><a href="shop-grid.html">Shop</a>
-									<ul>
-										<li><a href="shop-grid.html">Shop Grid</a></li>
-										<li><a href="single-product.html">Single Product</a></li>
-									</ul>
-								</li>
-								<li><a href="blog.html">Blog</a>
-									<ul>
-										<li><a href="blog.html">Blog Page</a></li>
-										<li><a href="blog-details.html">Blog Details</a></li>
-									</ul>
-								</li>
-								<li><a href="contact.html">Contact</a></li>
+								<li><a>Liên lạc</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -163,3 +149,18 @@
 			</div>		
 		</header>
 		<!-- //Header -->
+		<!-- Start Search Popup -->
+		<div class="box-search-content search_active block-bg close__top">
+			<form id="search_mini_form" class="minisearch" action="#">
+				<div class="field__search">
+					<input type="text" placeholder="Tìm kiếm ở đây....." id="searchvalue" name="searchvalue" onkeypress="keyPressSearch(event)">
+					<div class="action">
+						<a href="#"><i class="zmdi zmdi-search"></i></a>
+					</div>
+				</div>
+			</form>
+			<div class="close__wrap">
+				<span>close</span>
+			</div>
+		</div>
+		<!-- End Search Popup -->

@@ -36,6 +36,11 @@ public class TransactionProductId implements Serializable{
 		this.transactionId = transactionId;
 		this.productId = productId;
 	}
+
+	public TransactionProductId() {
+		super();
+	}
+	
 	
 	
 }

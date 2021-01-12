@@ -53,7 +53,7 @@
 				<div class="card-body">
 					<h1 align="center">Danh sách đơn hàng</h1>
 					<div class="data-tables datatable-dark">
-						<table id="dataTable3" class="text-center">
+						<table id="dataTable" class="text-center">
 							<thead class="text-capitalize">
 								<tr>
 									<th>Id</th>
@@ -99,7 +99,8 @@
 		</div>
 		<!-- Dark table end -->
 	</div>
-	<script>		
+	<script>
+		
 	</script>
 </body>
 </html>

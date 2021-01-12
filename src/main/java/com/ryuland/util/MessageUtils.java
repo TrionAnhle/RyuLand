@@ -30,6 +30,9 @@ public class MessageUtils {
 		} else if (message.equals("error_system")) {
 			result.put("message", "Lỗi hệ thống");
 			result.put("alert", "danger");
+		}else if (message.equals("order_success")) {
+			result.put("message", "Đặt hàng thành công");
+			result.put("alert", "success");
 		}
 		return result;
 	}

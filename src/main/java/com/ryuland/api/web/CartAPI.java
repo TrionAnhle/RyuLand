@@ -5,6 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -27,5 +28,11 @@ public class CartAPI {
 	public  ResponseEntity<Void> deleteItemCart(@RequestBody CartDTO dto) {
 		cartService.delete(dto);
 		return ResponseEntity.noContent().build();
+	}
+	
+	@PutMapping("/api/web/cart")
+	public ResponseEntity<CartDTO> updateCart(@RequestBody CartDTO dto){
+		CartDTO saveDto = cartService.updateItem(dto);
+		return new ResponseEntity<CartDTO>(saveDto, HttpStatus.OK);
 	}
 }

@@ -20,6 +20,7 @@ public class OrderConverter {
 	public OrderDTO toDto(TransactionEntity entity) {
 		OrderDTO dto = modelMapper.map(entity, OrderDTO.class);
 		dto.setFullname(userRepositoy.findOne(entity.getUser().getId()).getFullName());
+		dto.setTotalProduct((long) entity.getTransactionDetails().size());		
 		return dto;
 	}
 	

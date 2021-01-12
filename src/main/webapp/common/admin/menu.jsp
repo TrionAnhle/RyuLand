@@ -12,7 +12,7 @@
                     <nav>
                         <ul class="metismenu" id="menu">
                             <li>
-                                <a href="<c:url value='/quan-tri/trang-chu'/> "><i class="ti-dashboard"></i><span>Bảng điểu khiển</span></a>
+                                <a href="<c:url value='/quan-tri/trang-chu'/> "><i class="fa fa-bar-chart"></i><span>Thống kê</span></a>
                             </li>
                             <li>
                                 <a href="javascript:void(0)" aria-expanded="true"><i class="ti-archive"></i><span>Sản phẩm</span></a>
@@ -23,6 +23,13 @@
                             </li>
                             <li>
                                 <a href="<c:url value='/quan-tri/don-hang/danh-sach'/> "><i class="ti-clipboard"></i><span>Đơn hàng</span></a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)" aria-expanded="true"><i class="fa fa-group"></i><span>Người dùng</span></a>
+                                <ul class="collapse">
+                                    <li><a href="#">Quản trị</a></li>
+                                    <li><a href="#">Khách hàng</a></li>
+                                </ul>
                             </li>
                         </ul>
                     </nav>

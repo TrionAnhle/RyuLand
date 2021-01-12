@@ -12,5 +12,8 @@
     <decorator name="login" page="login.jsp">
         <pattern>/dang-nhap</pattern>
     </decorator>
-
+	
+	<decorator name="login" page="login.jsp">
+        <pattern>/dang-ky</pattern>
+    </decorator>
 </decorators>

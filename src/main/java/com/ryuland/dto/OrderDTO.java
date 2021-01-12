@@ -9,16 +9,36 @@ public class OrderDTO extends AbstractDTO<OrderDTO>{
 	private String address;
 	private String fullname;
 	
-	private Long totalOrder;
-	private Date createdDate;
-	private List<OrderDetailDTO> products;
 	
+	private Date createdDate;
+	private Long totalOrder;
+	private Long totalProduct;
+	private Long totalQuantity;
+	
+	
+	
+	public Long getTotalQuantity() {
+		return totalQuantity;
+	}
+	public void setTotalQuantity(Long totalQuantity) {
+		this.totalQuantity = totalQuantity;
+	}
 	public Long getTotalOrder() {
 		return totalOrder;
 	}
 	public void setTotalOrder(Long totalOrder) {
 		this.totalOrder = totalOrder;
 	}
+	public Long getTotalProduct() {
+		return totalProduct;
+	}
+	public void setTotalProduct(Long totalProduct) {
+		this.totalProduct = totalProduct;
+	}
+	private List<OrderDetailDTO> products;
+	
+	
+	
 	public Date getCreatedDate() {
 		return createdDate;
 	}

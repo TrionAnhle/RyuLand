@@ -50,17 +50,30 @@ public class CartService implements ICartService{
 		
 		UserEntity user = userRepository.findOne(userId);
 		ProductEntity product = productRepository.findOne(productId);
-		if(dto.getQuantity() <= product.getQuantity()) {
-			ItemCart itemCart = new ItemCart();
-			itemCart.setId(new UserProductId(userId, productId));
-			itemCart.setUser(user);
-			itemCart.setProduct(product);
-			itemCart.setQuantity(dto.getQuantity());
-			cartRepository.save(itemCart);
-			return findAllItemByUserId();
-		}else{
-			new Exception();
-			return null;
+		
+		ItemCart entity = cartRepository.findOne(new UserProductId(userId,productId));
+		if(entity == null) {
+			if(dto.getQuantity() <= product.getQuantity()) {
+				ItemCart itemCart = new ItemCart();
+				itemCart.setId(new UserProductId(userId, productId));
+				itemCart.setUser(user);
+				itemCart.setProduct(product);
+				itemCart.setQuantity(dto.getQuantity());
+				cartRepository.save(itemCart);
+				return findAllItemByUserId();
+			}else{
+				new Exception();
+				return null;
+			}
+		}else {
+			if(dto.getQuantity() + entity.getQuantity() <= product.getQuantity()) {
+				entity.setQuantity(entity.getQuantity()+dto.getQuantity());
+				cartRepository.save(entity);
+				return findAllItemByUserId();
+			}else{
+				new Exception();
+				return null;
+			}
 		}
 	}
 
@@ -69,5 +82,26 @@ public class CartService implements ICartService{
 		Long userId = SecurityUtils.getPrincipal().getId();
 		Long productId = dto.getProductId();
 		cartRepository.delete(new UserProductId(userId,productId));
+	}
+
+	@Override
+	public CartDTO updateItem(CartDTO dto) {
+		Long userId = SecurityUtils.getPrincipal().getId();
+		Long productId = dto.getProductId();
+		
+		UserEntity user = userRepository.findOne(userId);
+		ProductEntity product = productRepository.findOne(productId);
+		if(dto.getQuantity() <= product.getQuantity()) {
+			ItemCart itemCart = new ItemCart();
+			itemCart.setId(new UserProductId(userId, productId));
+			//itemCart.setUser(user);
+			//itemCart.setProduct(product);
+			itemCart.setQuantity(dto.getQuantity());
+			cartRepository.save(itemCart);
+			return findAllItemByUserId();
+		}else{
+			new Exception();
+			return null;
+		}
 	}
 }

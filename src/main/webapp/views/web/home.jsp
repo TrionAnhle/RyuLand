@@ -8,21 +8,6 @@
 	<title>Trang chủ</title>
 </head>
 <body>
-<!-- Start Search Popup -->
-		<div class="brown--color box-search-content search_active block-bg close__top">
-			<form id="search_mini_form" class="minisearch" action="#">
-				<div class="field__search">
-					<input type="text" placeholder="Search entire store here...">
-					<div class="action">
-						<a href="#"><i class="zmdi zmdi-search"></i></a>
-					</div>
-				</div>
-			</form>
-			<div class="close__wrap">
-				<span>close</span>
-			</div>
-		</div>
-		<!-- End Search Popup -->
         <!-- Start Slider area -->
         <div class="slider-area brown__nav slider--15 slide__activation slide__arrow01 owl-carousel owl-theme">
         	<!-- Start Single Slide -->
@@ -104,7 +89,7 @@
 								<div class="hot__box">
 									<span class="hot-label">NEW</span>
 									<c:if test="${i.discount >0 }">
-										<span class="hot-label"> - ${i.discount}%</span>
+										<span class="hot-label">- ${i.discount}%</span>
 									</c:if>
 								</div>
 							</div>
@@ -198,28 +183,7 @@
 	
 		
 		
-		<!-- Start NEwsletter Area -->
-		<section class="wn__newsletter__area bg-image--2">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-7 offset-lg-5 col-md-12 col-12 ptb--150">
-						<div class="section__title text-center">
-							<h2>Hãy tham gia với chúng tôi</h2>
-						</div>
-						<div class="newsletter__block text-center">
-							<p>Đăng ký nhận thông báo từ trang web</p>
-							<form action="#">
-								<div class="newsletter__box">
-									<input type="email" placeholder="Enter your e-mail">
-									<button>Subscribe</button>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		<!-- End NEwsletter Area -->		
+			
 		
 		<!-- Start BestSeller Product Area -->
 		<section class="wn__product__area brown--color pt--80  pb--30">

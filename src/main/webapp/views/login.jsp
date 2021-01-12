@@ -21,7 +21,7 @@
             <div class="login-box ptb--100">
                 <form id="login-form" action="j_spring_security_check" method="post">
                     <div class="login-form-head">
-                        <h4>Đăng nhập</h4>
+                        <h4>ĐĂNG NHẬP</h4>
                         <p>Chào bạn, Đăng nhập và trải nghiệm website</p>
                     </div>
                     <div class="login-form-body">
@@ -42,6 +42,11 @@
 										Phiên đăng nhập đã hết
 								</div>
 							</c:if>
+							<c:if test="${param.noLogin != null}">
+								<div class="alert alert-danger">	
+										Bạn chưa đăng nhập, hãy đăng nhập để mua hàng
+								</div>
+							</c:if>
 						</div>
                     	<!-- alert end -->
                         <div class="form-gp">
@@ -57,18 +62,11 @@
                             <div class="text-danger"></div>
                         </div>
                         <div class="submit-btn-area">
-                            <button id="form_submit" type="submit">Đăng nhập<i class="ti-arrow-right"></i></button>
-                            <div class="login-other row mt-4">
-                                <div class="col-6">
-                                    <a class="fb-login" href="#">Trang chủ</a>
-                                </div>
-                                <div class="col-6">
-                                    <a class="google-login" href="#">Quên mật khẩu</i></a>
-                                </div>
-                            </div>
+                            <button class="mb-5" id="form_submit" type="submit">Đăng nhập<i class="ti-arrow-right"></i></button>
+                            <a class="btn btn-info" href="<c:url value='/trang-chu'/>">Trang chủ</a>
                         </div>
                         <div class="form-footer text-center mt-5">
-                            <p class="text-muted">Bạn chưa có tài khoản?<a href="register.html">ĐĂNG KÝ</a></p>
+                            <p class="text-muted">Bạn chưa có tài khoản?<a href="<c:url value='/dang-ky'/> ">ĐĂNG KÝ</a></p>
                         </div>
                     </div>
                 </form>

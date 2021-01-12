@@ -16,6 +16,7 @@ import com.ryuland.repository.ICategoryRepository;
 import com.ryuland.repository.IOrderDetailRepository;
 import com.ryuland.repository.IProductRepository;
 import com.ryuland.service.IProductService;
+import com.ryuland.util.StringUtils;
 import com.ryuland.util.UploadFileUtils;
 
 @Service
@@ -74,6 +75,7 @@ public class ProductService implements IProductService{
 		}else {
 			product = productConverter.toEntity(dto);
 		}
+		product.setCode(StringUtils.chuyenMa(dto.getName()));
 		product.setCategory(category);
 		return productConverter.toDTO(productRepository.save(product));
 	}
@@ -112,6 +114,47 @@ public class ProductService implements IProductService{
 		List<ProductEntity> entities = productRepository.findListByDiscount();
 		List<ProductDTO> models = new ArrayList<ProductDTO>();
 		for(ProductEntity i : entities) {
+			ProductDTO dto = productConverter.toDTO(i);
+			models.add(dto);
+		}
+		return models;
+	}
+
+	@Override
+	public List<ProductDTO> findAllByCategory(String nameCategory) {
+		List<ProductEntity> entities;
+		if(nameCategory.equalsIgnoreCase("tat-ca")) {
+			entities = productRepository.findAll();
+		}else {
+			Long categoryId = -1L;
+			List<CategoryEntity> categories = categoryRepository.findAll();
+			for(CategoryEntity i : categories) {
+				if(nameCategory.equalsIgnoreCase(i.getCode())) {
+					categoryId = i.getId();
+				}
+			}
+			if(categoryId >-1) entities = productRepository.findAllByCategory(categoryId);
+			else entities = productRepository.findAll();
+		}
+		List<ProductDTO> models = new ArrayList<ProductDTO>();
+		for(ProductEntity i : entities) {
+			ProductDTO dto = productConverter.toDTO(i);
+			models.add(dto);
+		}
+		return models;
+	}
+
+	@Override
+	public List<ProductDTO> findAllByKey(String key) {
+		key = StringUtils.chuyenMa(key);
+		List<ProductEntity> entities1 = productRepository.findAllByKey();
+		List<ProductEntity> entities2 = new ArrayList<>();
+		for(ProductEntity j : entities1) {
+			if(j.getCode().contains(key)) entities2.add(j);
+		}
+		
+		List<ProductDTO> models = new ArrayList<ProductDTO>();
+		for(ProductEntity i : entities2) {
 			ProductDTO dto = productConverter.toDTO(i);
 			models.add(dto);
 		}

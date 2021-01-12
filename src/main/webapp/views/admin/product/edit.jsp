@@ -143,6 +143,9 @@
 		$.validator.addMethod("soPattern", function (value, element) {
 	        return this.optional(element) || /^[,0-9]+$/.test(value);
 	    }, "Chỉ được nhập số!");
+		$.validator.addMethod("soHopLePattern", function (value, element) {
+	        return this.optional(element) || (parseInt(value.replace(/,/g, "")) >0) ;
+	    }, "Chỉ được nhập số lớn hơn 0");		
 		$.validator.addMethod("filesize", function(value, element) {
 		    return this.optional(element) || (element.files[0].size <= 1048576) 
 		});
@@ -156,14 +159,16 @@
 	            },
 	            price: {
 	                required: true,
-	                soPattern : true
+	                soPattern : true,
+	                soHopLePattern: true
 	            },
 	            discount: {
 	                required: true,
 	            },
 	            quantity: {
 	                required: true,
-	                soPattern : true
+	                soPattern : true,
+	                soHopLePattern: true
 	            },
 	            file: {
 	            	filesize: true
